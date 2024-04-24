@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pdf_viewer/libRadtran.pdf</file>
+        <file>pdf_viewer/SumatraPDF.exe</file>
+    </qresource>
+</RCC>

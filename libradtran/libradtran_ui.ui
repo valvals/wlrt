@@ -16,7 +16,7 @@
   <property name="font">
    <font>
     <family>Segoe UI</family>
-    <pointsize>11</pointsize>
+    <pointsize>16</pointsize>
    </font>
   </property>
   <property name="windowTitle">
@@ -32,8 +32,38 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
       <property name="textInteractionFlags">
-       <set>Qt::NoTextInteraction</set>
+       <set>Qt::TextEditorInteraction</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_save_and_rerun_libradtran">
+      <property name="text">
+       <string>Сохранить и перезапустить</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextBrowser" name="textBrowser_output_messages">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
       </property>
      </widget>
     </item>
@@ -48,7 +78,10 @@
          </size>
         </property>
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Открыть папку&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Открыть папку c выходными данными&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>Открыть папку с выходными данными</string>
         </property>
         <property name="text">
          <string>...</string>
@@ -58,10 +91,19 @@
       <item>
        <widget class="QLabel" name="label_out_path">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Путь к папке с выходными данными&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(255, 248, 44);</string>
@@ -81,12 +123,24 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
+          <width>220</width>
           <height>0</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Имя выходного файла&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(255, 248, 44);</string>
+        </property>
+        <property name="placeholderText">
+         <string>имя выходного файла</string>
         </property>
        </widget>
       </item>
@@ -100,16 +154,28 @@
      <x>0</x>
      <y>0</y>
      <width>900</width>
-     <height>29</height>
+     <height>35</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>Справка</string>
     </property>
     <addaction name="action_LibRadTran"/>
    </widget>
    <widget class="QMenu" name="menu_2">
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>Файл</string>
     </property>
@@ -118,6 +184,12 @@
     <addaction name="action_open_result_dir"/>
    </widget>
    <widget class="QMenu" name="menu_3">
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>Формат</string>
     </property>
@@ -130,6 +202,9 @@
   <action name="action_LibRadTran">
    <property name="text">
     <string>Документация LibRadTran</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
    </property>
   </action>
   <action name="action_choose_inp_file">

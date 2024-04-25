@@ -25,6 +25,7 @@ void formatResult();
 void getAtmosphereDataList(QStringList& atmo_list);
 void getSolarDataList(QStringList& solar_list);
 void getListOfData(const QString& path, QStringList& list);
+QString getLastErrorsMessages();
 }
 
 

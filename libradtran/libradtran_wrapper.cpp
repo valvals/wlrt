@@ -72,7 +72,7 @@ void formatResult()
     if(elements.size() != 2)continue;;
     result.append(elements[0]);
     result.append("\t");
-    result.append(QString::number(elements[1].toDouble()*1000000));
+    result.append(elements[1]);
     result.append("\n");
   }
   file.close();
@@ -105,6 +105,16 @@ void getListOfData(const QString& path,
   list = dir.entryList();
   qDebug()<<path;
   qDebug()<<"--->"<<list;
+}
+
+QString getLastErrorsMessages()
+{
+    QFile file(QDir::currentPath()+"/libradtran/libradtran_2.0.4/uvspec.err");
+    file.open(QIODevice::ReadOnly);
+    QTextStream ts(&file);
+    QString result = ts.readAll();
+    file.close();
+    return result;
 }
 
 } // end lrt namespace

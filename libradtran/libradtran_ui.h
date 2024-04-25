@@ -19,7 +19,7 @@ class LibradtranUi : public QMainWindow {
 
   void on_pushButton_save_and_rerun_libradtran_clicked();
 
-private:
+ private:
   Ui::LibradtranUi* ui;
   QString last_choosed_path;
   QString getOutFileName();

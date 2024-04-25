@@ -109,12 +109,12 @@ void getListOfData(const QString& path,
 
 QString getLastErrorsMessages()
 {
-    QFile file(QDir::currentPath()+"/libradtran/libradtran_2.0.4/uvspec.err");
-    file.open(QIODevice::ReadOnly);
-    QTextStream ts(&file);
-    QString result = ts.readAll();
-    file.close();
-    return result;
+  QFile file(QDir::currentPath()+"/libradtran/libradtran_2.0.4/uvspec.err");
+  file.open(QIODevice::ReadOnly);
+  QTextStream ts(&file);
+  QString result = ts.readAll();
+  file.close();
+  return result;
 }
 
 } // end lrt namespace

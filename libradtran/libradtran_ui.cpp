@@ -26,7 +26,7 @@ LibradtranUi::LibradtranUi(QWidget* parent) :
                                                      last_choosed_path,
                                                      tr("Libradtran files (*.inp)"));
 
-  run_last_choosed_libradtran_input();
+    run_last_choosed_libradtran_input();
   });
   connect(ui->action_result_path, &QAction::triggered, [this]() {
     auto new_path = QFileDialog::getExistingDirectory();
@@ -52,25 +52,24 @@ QString LibradtranUi::getOutFileName() {
   return path.arg(QString(ui->lineEdit_file_name->text()), "");
 }
 
-void LibradtranUi::run_last_choosed_libradtran_input()
-{
-    QFile file(last_choosed_path);
-    if (!file.open(QIODevice::ReadOnly)) {
-      uts::showWarnigMessage("Файл не найден.");
-      return;
-    };
-    QFile::remove(QDir::currentPath() + lrt::kLibradtran_input_path);
-    QFile::copy(last_choosed_path, QDir::currentPath() + lrt::kLibradtran_input_path);
-    ui->textBrowser_input_file->clear();
-    QTextStream ts(&file);
-    ui->textBrowser_input_file->setText(ts.readAll());
-    file.close();
-    lrt::run_libradtran();
-    if (ui->action_is_format->isChecked()) {
-      lrt::formatResult();
-    }
-    QFile::copy("libradtran/_out/libradtran.txt", getOutFileName());
-    ui->textBrowser_output_messages->setText(lrt::getLastErrorsMessages());
+void LibradtranUi::run_last_choosed_libradtran_input() {
+  QFile file(last_choosed_path);
+  if (!file.open(QIODevice::ReadOnly)) {
+    uts::showWarnigMessage("Файл не найден.");
+    return;
+  };
+  QFile::remove(QDir::currentPath() + lrt::kLibradtran_input_path);
+  QFile::copy(last_choosed_path, QDir::currentPath() + lrt::kLibradtran_input_path);
+  ui->textBrowser_input_file->clear();
+  QTextStream ts(&file);
+  ui->textBrowser_input_file->setText(ts.readAll());
+  file.close();
+  lrt::run_libradtran();
+  if (ui->action_is_format->isChecked()) {
+    lrt::formatResult();
+  }
+  QFile::copy("libradtran/_out/libradtran.txt", getOutFileName());
+  ui->textBrowser_output_messages->setText(lrt::getLastErrorsMessages());
 }
 
 
@@ -84,16 +83,15 @@ void LibradtranUi::on_pushButton_openFolder_clicked() {
 }
 
 
-void LibradtranUi::on_pushButton_save_and_rerun_libradtran_clicked()
-{
+void LibradtranUi::on_pushButton_save_and_rerun_libradtran_clicked() {
 
 
-    QFile file(last_choosed_path);
-    qDebug()<<last_choosed_path;
-    if(file.open(QIODevice::ReadWrite)){
+  QFile file(last_choosed_path);
+  qDebug() << last_choosed_path;
+  if (file.open(QIODevice::ReadWrite)) {
     QFile::remove(last_choosed_path);
     file.write(ui->textBrowser_input_file->toPlainText().toLatin1());
     file.close();
-    };
-    run_last_choosed_libradtran_input();
+  };
+  run_last_choosed_libradtran_input();
 }

@@ -1,4 +1,4 @@
-QT += core gui widgets
+QT += core gui widgets printsupport
 
 RC_FILE = recource.rc
 TARGET = WinLibRadTran
@@ -10,6 +10,7 @@ SOURCES += \
     main.cpp \
     message_reporter.cpp \
     pdf_util.cpp \
+    qcustomplot.cpp \
     qrc_files_restorer.cpp
 
 HEADERS += \
@@ -17,6 +18,7 @@ HEADERS += \
     libradtran/libradtran_wrapper.h \
     message_reporter.h \
     pdf_util.h \
+    qcustomplot.h \
     qrc_files_restorer.h \
     version.h
 

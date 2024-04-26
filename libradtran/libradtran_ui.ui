@@ -41,11 +41,22 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_save_and_rerun_libradtran">
-      <property name="text">
-       <string>Сохранить и перезапустить</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="pushButton_save_and_rerun_libradtran">
+        <property name="text">
+         <string>Сохранить и перезапустить</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_show_plot">
+        <property name="text">
+         <string>Показать график</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <widget class="QTextBrowser" name="textBrowser_output_messages">

@@ -2,6 +2,7 @@
 #define LIBRADTRAN_UI_H
 
 #include <QMainWindow>
+#include "qcustomplot.h"
 
 namespace Ui {
 class LibradtranUi;
@@ -19,9 +20,14 @@ class LibradtranUi : public QMainWindow {
 
   void on_pushButton_save_and_rerun_libradtran_clicked();
 
- private:
+  void on_pushButton_show_plot_clicked();
+
+private:
   Ui::LibradtranUi* ui;
-  QString last_choosed_path;
+  QCustomPlot* m_plot;
+  QVector<double> m_waves;
+  QVector<double> m_values;
+  QString m_last_choosed_path;
   QString getOutFileName();
   void run_last_choosed_libradtran_input();
 };

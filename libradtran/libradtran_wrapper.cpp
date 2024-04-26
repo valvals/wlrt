@@ -57,8 +57,12 @@ void run_libradtran()
   std::system(libradtran_path.toStdString().c_str());
 }
 
-void formatResult()
+void getResult(bool isFormat,
+               QVector<double>& waves,
+               QVector<double>& values)
 {
+  waves.clear();
+  values.clear();
   QString result;
   const QString out_file_name = QDir::currentPath()+"/libradtran/_out/libradtran.txt";
   QFile file(out_file_name);
@@ -69,17 +73,21 @@ void formatResult()
     if(line.isEmpty())continue;
     auto elements = line.split(' ');
     elements.removeAll("");
-    if(elements.size() != 2)continue;;
+    if(elements.size() != 2)continue;
     result.append(elements[0]);
+    waves.push_back(elements[0].toDouble());
     result.append("\t");
     result.append(elements[1]);
+    values.push_back(elements[1].toDouble());
     result.append("\n");
   }
   file.close();
+  if(isFormat){
   QFile::remove(out_file_name);
   file.open(QIODevice::WriteOnly);
   file.write(result.toLatin1());
   file.close();
+  }
   QClipboard* clipboard = QGuiApplication::clipboard();
   clipboard->setText(result);
 }

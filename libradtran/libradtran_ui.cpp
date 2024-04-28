@@ -43,6 +43,7 @@ LibradtranUi::LibradtranUi(QWidget* parent) :
   connect(ui->action_open_result_dir, &QAction::triggered, [this]() {
     on_pushButton_openFolder_clicked();
   });
+  connect(ui->action_save_and_rerun,SIGNAL(triggered()),SLOT(on_pushButton_save_and_rerun_libradtran_clicked()));
 }
 
 LibradtranUi::~LibradtranUi() {

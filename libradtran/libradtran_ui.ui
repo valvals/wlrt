@@ -13,6 +13,12 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>600</height>
+   </size>
+  </property>
   <property name="font">
    <font>
     <family>Segoe UI</family>
@@ -66,10 +72,16 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>150</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>100</height>
+        <height>150</height>
        </size>
       </property>
       <property name="styleSheet">
@@ -134,7 +146,7 @@ color: rgb(255, 255, 255);</string>
         </property>
         <property name="minimumSize">
          <size>
-          <width>220</width>
+          <width>290</width>
           <height>0</height>
          </size>
         </property>
@@ -165,7 +177,7 @@ color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>900</width>
-     <height>35</height>
+     <height>41</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -193,6 +205,7 @@ color: rgb(255, 255, 255);</string>
     <addaction name="action_choose_inp_file"/>
     <addaction name="action_result_path"/>
     <addaction name="action_open_result_dir"/>
+    <addaction name="action_save_and_rerun"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="font">
@@ -223,7 +236,7 @@ color: rgb(255, 255, 255);</string>
     <string>Выбрать входной файл *.inp</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+L</string>
+    <string>Ctrl+I</string>
    </property>
   </action>
   <action name="action_result_path">
@@ -239,7 +252,7 @@ color: rgb(255, 255, 255);</string>
     <string>Открыть папку с выходными данными</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+R</string>
+    <string>Ctrl+D</string>
    </property>
   </action>
   <action name="action_is_format">
@@ -251,6 +264,14 @@ color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Форматировать выходные данные</string>
+   </property>
+  </action>
+  <action name="action_save_and_rerun">
+   <property name="text">
+    <string>Сохранить и перезапустить </string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
    </property>
   </action>
  </widget>

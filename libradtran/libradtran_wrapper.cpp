@@ -83,10 +83,10 @@ void getResult(bool isFormat,
   }
   file.close();
   if(isFormat){
-  QFile::remove(out_file_name);
-  file.open(QIODevice::WriteOnly);
-  file.write(result.toLatin1());
-  file.close();
+    QFile::remove(out_file_name);
+    file.open(QIODevice::WriteOnly);
+    file.write(result.toLatin1());
+    file.close();
   }
   QClipboard* clipboard = QGuiApplication::clipboard();
   clipboard->setText(result);
@@ -119,11 +119,11 @@ QString getLastErrorsMessages()
 {
   QFile file(QDir::currentPath()+"/libradtran/libradtran_2.0.4/uvspec.err");
   if(file.open(QIODevice::ReadOnly)){
-  QTextStream ts(&file);
-  QString result = ts.readAll();
-  file.close();
-  return result;
-}
+    QTextStream ts(&file);
+    QString result = ts.readAll();
+    file.close();
+    return result;
+  }
   return "Warning: It is not impossible to open uvspec.err";
 }
 

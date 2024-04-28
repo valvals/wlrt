@@ -22,7 +22,7 @@ class LibradtranUi : public QMainWindow {
 
   void on_pushButton_show_plot_clicked();
 
-private:
+ private:
   Ui::LibradtranUi* ui;
   QCustomPlot* m_plot;
   QVector<double> m_waves;

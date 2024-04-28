@@ -22,7 +22,7 @@ void run_libradtran(double wls,
                     const QString& solar_file,
                     const QString& atmo_file);
 void run_libradtran();
-void getResult(bool isFormat, QVector<double> &waves, QVector<double> &values);
+void getResult(bool isFormat, QVector<double>& waves, QVector<double>& values);
 void getAtmosphereDataList(QStringList& atmo_list);
 void getSolarDataList(QStringList& solar_list);
 void getListOfData(const QString& path, QStringList& list);

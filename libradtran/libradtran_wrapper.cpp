@@ -118,11 +118,13 @@ void getListOfData(const QString& path,
 QString getLastErrorsMessages()
 {
   QFile file(QDir::currentPath()+"/libradtran/libradtran_2.0.4/uvspec.err");
-  file.open(QIODevice::ReadOnly);
+  if(file.open(QIODevice::ReadOnly)){
   QTextStream ts(&file);
   QString result = ts.readAll();
   file.close();
   return result;
+}
+  return "Warning: It is not impossible to open uvspec.err";
 }
 
 } // end lrt namespace
